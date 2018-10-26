@@ -8,7 +8,7 @@ Sphinxでスライド作る用のコンテナで、テーマは `sphinxjp.themes
 使い方
 ==============================
 
-build
+create docker image
 
 .. code-block:: sh
 
