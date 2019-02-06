@@ -12,22 +12,24 @@ create docker image
 
 .. code-block:: sh
 
-   $ docker build -t mursts/docker-sphinx-gopher-theme .
+   $ docker build -t mursts/sphinx-gopher-theme .
 
 sphinx-quickstart
 
 .. code-block:: sh
 
-   $ docker run -it --rm -v /path/to/dir:/documets mursts/docker-sphinx-gopher-theme sphinx-quickstart
+   $ docker run -it --rm -v $PWD:/doc mursts/sphinx-gopher-theme sphinx-quickstart
+
+edit conf.py
+
+.. code-block:: python
+   html_theme = "gopher"
+   extensions.append('sphinxjp.themes.gopher')
+   html_theme_options = {'note_enabled': True}
 
 build
 
 .. code-block:: sh
 
-   $ docker run -it --rm -v /path/to/dir:/documets -p 8000:8000 mursts/docker-sphinx-gopher-theme make html
-
-   or
-
-   $ docker run -it --rm -v /path/to/dir:/documets -p 8000:8000 mursts/docker-sphinx-gopher-theme make livehtml
-
+   $ docker run -it --rm -v $PWD:/doc -p 8000:8000 mursts/sphinx-gopher-theme make html
 
