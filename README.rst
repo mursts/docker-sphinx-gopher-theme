@@ -23,6 +23,7 @@ sphinx-quickstart
 edit conf.py
 
 .. code-block:: python
+
    html_theme = "gopher"
    extensions.append('sphinxjp.themes.gopher')
    html_theme_options = {'note_enabled': True}
